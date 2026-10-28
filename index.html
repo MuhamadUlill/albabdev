@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080d1b">
+<title>Muhamad Ulil Albab — Portfolio</title>
+<style>
+:root{--pink:#d6b56d;--text:#f2f4f8;--muted:#aab5c8;--navy:#0b1427;--gold:#d6b56d;--ice:#79d6d0}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;background:#050811;color:var(--text);font-family:Arial,sans-serif}
+body{overflow:hidden}
+.app{height:100dvh;max-width:560px;margin:auto;position:relative;overflow:hidden;background:radial-gradient(ellipse at 16% 16%,#26395b88,transparent 42%),radial-gradient(ellipse at 88% 78%,#6e552322,transparent 40%),radial-gradient(ellipse at 55% 45%,#14243d,transparent 60%),linear-gradient(145deg,#03060d,#0b1427 52%,#050811)}
+.top{height:61px;position:absolute;z-index:10;top:0;left:0;right:0;padding:0 20px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(#080d1bf2,#080d1b99,transparent);font-size:11px;letter-spacing:1.5px;color:#d5dbea;pointer-events:none}
+.brand{display:flex;align-items:center;gap:9px;font-weight:bold}.mark{width:31px;height:31px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,#f0d99b,#a98543);color:#101522;font-weight:bold}
+.track{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;touch-action:pan-x pan-y;scrollbar-width:none;perspective:1200px}
+.track::-webkit-scrollbar{display:none}
+.page{flex:0 0 100%;width:100%;height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;scroll-snap-align:start;scroll-snap-stop:always;padding:88px 23px 125px;scrollbar-width:none;transform-origin:center;backface-visibility:hidden;transition:filter .45s ease}
+.page::-webkit-scrollbar{display:none}
+.page.motion-in{animation:macPageIn .72s cubic-bezier(.2,.8,.2,1) both}
+@keyframes macPageIn{0%{opacity:.48;filter:blur(7px);transform:scale(.965) translateY(12px)}55%{opacity:1;filter:blur(0);transform:scale(1.008) translateY(-2px)}100%{opacity:1;filter:blur(0);transform:scale(1) translateY(0)}}
+h1{font: bold clamp(36px,9vw,50px)/1.08 Georgia,serif;letter-spacing:-1.5px;margin:23px 0}
+h2{font:29px Georgia,serif;margin:0 0 17px}
+.muted{color:var(--muted);line-height:1.75}
+.pill{display:inline-block;padding:11px 15px;border:1px solid #d6b56d44;background:#d6b56d0d;border-radius:30px;color:#e8d5a7;font-size:12px}
+.btn{border:1px solid #f8d6dc33;background:#ffffff09;color:var(--text);border-radius:17px;padding:14px 16px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.hot{background:linear-gradient(135deg,#f0d99b,#9b7b3f);color:#31191d;border-color:transparent;font-weight:bold}
+.glass,.card{border:1px solid #d6b56d30;background:linear-gradient(135deg,#e9edf510,#b8c4d606);backdrop-filter:blur(24px) saturate(145%);-webkit-backdrop-filter:blur(24px) saturate(145%);box-shadow:inset 0 1px #ffffff0c,0 12px 35px #0002;border-radius:25px}
+.card{padding:17px;border-radius:20px;margin-bottom:12px}
+.orb{position:absolute;right:-18px;top:125px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff9,#d6b56d65 25%,#79d6d020 62%,transparent 73%);box-shadow:inset -15px -12px 30px #020b3266,0 0 45px #d6b56d15;pointer-events:auto;isolation:isolate;cursor:pointer;transform-origin:center;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .7s;animation:orbFloat 6s ease-in-out infinite;}
+.orb:before,.orb:after{content:"";position:absolute;inset:8%;border:1px solid #fff5;border-radius:46% 54% 58% 42% / 45% 42% 58% 55%;opacity:0;pointer-events:none;}
+.orb:before{background:radial-gradient(ellipse at 32% 25%,#fff6,transparent 38%);box-shadow:inset 0 0 20px #fff2;}
+.orb:after{inset:-4%;border-color:#d6b56d9c;}
+.orb.water-hit{transform:scale(1.2) rotate(8deg);filter:brightness(1.25) saturate(1.25);animation:waterMorph .95s cubic-bezier(.2,.8,.2,1) both;}
+.orb.water-hit:before{animation:rippleRing .95s ease-out both;}
+.orb.water-hit:after{animation:rippleRing 1.15s .08s ease-out both;}
+@keyframes orbFloat{0%,100%{translate:0 0;rotate:-3deg}50%{translate:-4px -9px;rotate:4deg}}
+@keyframes waterMorph{0%{border-radius:50%;transform:scale(1)}25%{border-radius:43% 57% 40% 60% / 55% 38% 62% 45%;transform:scale(1.24,1.13) rotate(8deg)}55%{border-radius:58% 42% 57% 43% / 42% 58% 42% 58%;transform:scale(1.14,1.22) rotate(-5deg)}100%{border-radius:50%;transform:scale(1) rotate(0)}}
+@keyframes rippleRing{0%{transform:scale(.55);opacity:.85}100%{transform:scale(1.55);opacity:0}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.icon{width:50px;height:50px;display:grid;place-items:center;border-radius:16px;background:#d6b56d18;border:1px solid #fff1;font-size:24px;margin-bottom:12px}
+.progress{height:4px;background:#ffffff12;border-radius:5px;margin-top:12px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,#d6b56d,#79d6d0);border-radius:5px}
+.hint{text-align:center;font-size:10px;letter-spacing:1.2px;color:#8daedb;margin:22px 0}
+.nav.is-dragging{cursor:grabbing}.nav.is-dragging .liquid{filter:brightness(1.16) saturate(1.15);box-shadow:inset 0 1px 3px #ffffff50,0 0 25px #d6b56d35}.nav{position:absolute;z-index:20;bottom:max(14px,env(safe-area-inset-bottom));left:14px;right:14px;display:flex;gap:2px;padding:8px;touch-action:none;user-select:none;-webkit-user-select:none;border-radius:26px;background:linear-gradient(135deg,#e9edf518,#b8c4d60c);border:1px solid #d6b56d33;backdrop-filter:blur(28px) saturate(160%);-webkit-backdrop-filter:blur(28px) saturate(160%);box-shadow:0 15px 45px #0006,inset 0 1px #ffffff18}
+.tab{position:relative;z-index:2;flex:1;min-width:0;border:0;touch-action:none;user-select:none;-webkit-user-select:none;background:transparent;color:#b9c4d6;border-radius:999px;padding:11px 0 9px;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:10px}
+.tab svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.7}.tab.active{color:#fff4d7;text-shadow:0 0 12px #79d6d0}.tab span{white-space:nowrap}
+.liquid{position:absolute;top:7px;bottom:7px;left:0;width:20%;will-change:left,width,border-radius;z-index:1;pointer-events:none;border-radius:999px;background:linear-gradient(180deg,#ffffff22 0%,#ffffff0b 48%,#ffffff14 100%);border:1px solid #ffffff48;box-shadow:inset 0 1px 2px #ffffff80,inset 0 -3px 7px #00000010,0 3px 12px #00000018;overflow:visible;transition:left .22s cubic-bezier(.2,.8,.2,1),width .18s ease,border-radius .22s ease}
+.liquid:before{content:"";position:absolute;inset:1px;border-radius:inherit;background:radial-gradient(ellipse at 25% 20%,#ffffff60,transparent 42%),linear-gradient(110deg,transparent 15%,#fff3 48%,transparent 78%);background-size:100% 100%,220% 100%;animation:shine 4.5s ease-in-out infinite}
+.liquid:after{content:"";position:absolute;inset:2px;border-radius:inherit;pointer-events:none;background:linear-gradient(105deg,transparent 15%,#ffffff16 45%,transparent 70%);opacity:.75}
+.water-bubble{position:absolute;z-index:5;pointer-events:none;width:var(--trail-w,22px);height:var(--trail-h,18px);border-radius:46% 54% 52% 48% / 55% 44% 56% 45%;background:linear-gradient(145deg,#ffffff30,#ffffff0c 60%,#ffffff1a);border:1px solid #ffffff3a;box-shadow:inset 0 1px 2px #ffffff50,0 1px 3px #00000012;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);transform:translate(-50%,-50%) scaleX(var(--stretch,1));animation:waterSmear .48s cubic-bezier(.2,.7,.2,1) forwards}@keyframes waterSmear{0%{opacity:.92;transform:translate(-50%,-50%) scaleX(var(--stretch,1)) scaleY(.92)}45%{opacity:.7;transform:translate(-50%,-50%) scaleX(calc(var(--stretch,1)*1.25)) scaleY(1.05)}100%{opacity:0;transform:translate(-50%,-50%) scaleX(calc(var(--stretch,1)*1.5)) scaleY(.72)}}
+@keyframes shine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+
+
+
+.demo-nav-wrap{position:relative;display:flex;gap:3px;padding:7px;border:1px solid #bcebe455;border-radius:25px;background:linear-gradient(145deg,#ffffff19,#bcebe409 55%,#d6b56d0b);box-shadow:inset 0 1px #ffffff2b,inset 0 -8px 18px #79d6d009,0 12px 28px #0004;overflow:hidden;touch-action:pan-y;user-select:none;margin:20px 0 18px}.demo-nav-item{position:relative;z-index:2;flex:1;min-width:0;border:0;background:transparent;color:#aab5c8;border-radius:16px;padding:10px 2px 8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;font-size:20px}.demo-nav-item span{font-size:10px}.demo-nav-item.active{color:#fff1c8}.demo-nav-liquid{position:absolute;left:0;top:7px;bottom:7px;width:25%;border-radius:999px;border:1px solid #ffffff50;background:linear-gradient(180deg,#ffffff24,#ffffff0b 52%,#ffffff18);box-shadow:inset 0 1px 2px #ffffff80,inset 0 -3px 7px #00000012,0 3px 12px #00000018;transition:transform .16s cubic-bezier(.18,.8,.25,1),width .16s ease;border-radius:999px;pointer-events:none;will-change:transform,width;overflow:visible}.demo-nav-liquid:after{content:"";position:absolute;inset:2px;border-radius:inherit;background:linear-gradient(105deg,transparent 12%,#ffffff18 48%,transparent 78%);pointer-events:none}.demo-nav-stage{text-align:center;padding:8px 0 15px}.palette-swatches{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:16px 0}.palette-swatch{min-height:75px;border-radius:16px;border:1px solid #ffffff33;display:flex;align-items:end;justify-content:center;padding:8px;color:white;font-size:11px;font-weight:bold;text-shadow:0 1px 4px #0008}.palette-preview{border:1px solid #ffffff24;border-radius:20px;padding:22px 16px;background:linear-gradient(135deg,#0B1427,#172c40);min-height:140px}.palette-preview b{font:10px Arial;letter-spacing:2px;color:#D6B56D}.palette-preview p{font:22px Georgia,serif;margin:13px 0;color:#F2F4F8}.palette-preview span{font-size:10px;color:#79D6D0}
+
+/* Skill cards + interactive project demos */
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:18px 0}
+.skill-card{padding:16px;border-radius:21px;border:1px solid #d6b56d25;background:linear-gradient(145deg,#111e32dd,#070b14ee);box-shadow:inset 0 1px #ffffff0b,0 12px 26px #0002}
+.skill-symbol{width:48px;height:48px;display:grid;place-items:center;border-radius:16px;margin-bottom:13px;color:#d6b56d;background:linear-gradient(145deg,#d6b56d20,#79d6d012);border:1px solid #d6b56d40}
+.skill-symbol svg{width:27px;height:27px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.skill-card b{display:block;font-size:14px}.skill-card p{font-size:11px;line-height:1.55;color:var(--muted);margin:6px 0 0}
+.project-open{width:100%;text-align:left;color:inherit;cursor:pointer;display:block;transition:transform .2s,border-color .2s}.project-open:active{transform:scale(.985)}.project-open:focus-visible{outline:2px solid #79d6d0;outline-offset:3px}
+.project-cover{border-radius:15px;padding:18px;margin-bottom:15px;min-height:122px;position:relative;overflow:hidden}.project-cover:after{content:"";position:absolute;width:115px;height:115px;right:-20px;bottom:-55px;border-radius:50%;border:1px solid #ffffff26;box-shadow:0 0 0 12px #ffffff06,0 0 0 26px #ffffff04}
+.demo-backdrop{position:fixed;z-index:9999;inset:0;background:#02050bd9;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:none;align-items:center;justify-content:center;padding:18px}.demo-backdrop.open{display:flex;animation:fadeDemo .2s ease both}@keyframes fadeDemo{from{opacity:0}to{opacity:1}}
+.demo-panel{width:100%;max-width:420px;max-height:88%;overflow:auto;border-radius:28px;padding:20px;background:linear-gradient(145deg,#17253bdd,#080d19f5 70%);border:1px solid #d6b56d55;box-shadow:0 25px 80px #000a,inset 0 1px #ffffff22;animation:panelIn .28s cubic-bezier(.2,.8,.2,1) both}@keyframes panelIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.demo-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:17px}.demo-close{border:1px solid #ffffff25;background:#ffffff0b;color:#fff;border-radius:50%;width:38px;height:38px;font-size:20px}
+.calc-shell{position:relative;isolation:isolate;overflow:hidden;border:1px solid #bcebe43d;border-radius:27px;padding:14px;background:radial-gradient(ellipse at 15% 0%,#79d6d01a,transparent 42%),linear-gradient(145deg,#ffffff17,#ffffff05 55%,#d6b56d0a);backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%);box-shadow:inset 0 1px #ffffff32,inset 0 -10px 25px #79d6d008,0 16px 35px #0005}
+.calc-screen{min-height:93px;padding:15px 12px;text-align:right;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;border-radius:19px;background:radial-gradient(ellipse at 80% 0%,#79d6d014,transparent 45%),linear-gradient(145deg,#020611d9,#111b2bdd);border:1px solid #bcebe425;margin-bottom:12px;box-shadow:inset 0 2px 12px #0005,inset 0 1px #ffffff12}
+#calcExpression{font-size:13px;color:#9aabc4;min-height:19px;overflow-wrap:anywhere}#calcDisplay{font-size:34px;font-weight:300;letter-spacing:-1px;overflow-wrap:anywhere;color:#f6f7fb}
+.calc-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.calc-key{position:relative;overflow:hidden;border:1px solid #ffffff20;background:radial-gradient(ellipse at 25% 0%,#ffffff22,transparent 55%),linear-gradient(145deg,#ffffff19,#ffffff06);color:#f4f6fb;min-height:51px;border-radius:17px;font-size:18px;box-shadow:inset 0 1px #ffffff20,inset 0 -4px 10px #0002,0 4px 10px #0002;transition:transform .16s cubic-bezier(.2,.9,.2,1),background .18s,border-color .18s,box-shadow .18s;transform:translateZ(0);-webkit-tap-highlight-color:transparent}.calc-key:active{transform:translateY(2px) scale(.93);background:linear-gradient(145deg,#79d6d04a,#d6b56d35);box-shadow:inset 0 2px 9px #0003,0 0 17px #79d6d020}.calc-key.is-tapped{animation:keyLiquid .32s cubic-bezier(.2,.9,.2,1)}@keyframes keyLiquid{0%{transform:scale(1)}35%{transform:scale(.91,.94);border-radius:22px;background:linear-gradient(145deg,#79d6d04a,#ffffff20)}72%{transform:scale(1.035,1.02);border-radius:14px}100%{transform:scale(1);border-radius:17px}}.calc-key.op{color:#9bf0e9;border-color:#79d6d04d;background:linear-gradient(145deg,#79d6d01c,#ffffff07)}.calc-key.gold{background:radial-gradient(ellipse at 25% 0%,#fff7d8,#d6b56d 45%,#9a7b42);color:#111722;font-weight:bold;box-shadow:inset 0 1px #fff9,0 5px 15px #d6b56d22}.calc-key.wide{grid-column:span 2}.calc-display-pop{animation:displayPop .2s ease-out}@keyframes displayPop{0%{transform:scale(.97);opacity:.7}65%{transform:scale(1.025);opacity:1}100%{transform:scale(1);opacity:1}}
+.liquid-demo-orb{width:108px;height:108px;border-radius:34% 66% 59% 41%/44% 42% 58% 56%;margin:16px auto;background:radial-gradient(circle at 30% 22%,#ffffffaa,transparent 23%),linear-gradient(135deg,#d6b56d88,#79d6d055 45%,#233f66);box-shadow:inset -12px -12px 28px #0005,0 0 45px #79d6d033;animation:demoFloat 4s ease-in-out infinite alternate}
+@keyframes demoFloat{to{transform:translateY(-7px) rotate(8deg);border-radius:58% 42% 38% 62%/55% 43% 57% 45%}}
+.demo-switches{display:flex;gap:8px;flex-wrap:wrap}.demo-chip{border:1px solid #ffffff22;background:#ffffff08;color:#dce5f5;border-radius:14px;padding:10px 12px;font-size:12px}.demo-chip.active{border-color:#79d6d077;background:#79d6d018;color:#a8f0e8}
+@media(max-width:370px){.skill-grid{gap:8px}.skill-card{padding:13px}.calc-keys{gap:6px}.calc-key{min-height:47px}}
+.home-feature{border-color:#d6b56d3d;background:linear-gradient(145deg,#17243aee,#0b1427d9 58%,#171b2cee)}.feature-glow{position:absolute;width:190px;height:190px;right:-80px;top:-85px;border-radius:50%;background:radial-gradient(circle,#d6b56d38, #79d6d014 45%,transparent 70%);filter:blur(3px);pointer-events:none}.journey-icon{flex:0 0 55px;height:55px;border:1px solid #d6b56d66;border-radius:19px;display:grid;place-items:center;font-size:30px;color:#e7cc8b;background:linear-gradient(145deg,#d6b56d24,#79d6d012);box-shadow:inset 0 1px #fff2,0 0 24px #d6b56d12}.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;position:relative}.mini-stats div{padding:11px 8px;border-radius:14px;background:#0003;border:1px solid #ffffff0c}.mini-stats b{display:block;font:22px Georgia,serif;color:#d6b56d}.mini-stats span{display:block;color:#aab5c8;font-size:10px;margin-top:4px}.quote-strip{margin-top:14px;padding:14px 15px;border-left:2px solid #79d6d0;background:linear-gradient(90deg,#79d6d012,transparent);display:grid;grid-template-columns:22px 1fr;column-gap:8px;align-items:start}.quote-mark{font:30px Georgia,serif;color:#79d6d0}.quote-strip span:nth-child(2){font:italic 14px/1.5 Georgia,serif;color:#dce4f2}.quote-strip i{grid-column:2;color:#8da0bb;font-size:10px;margin-top:7px}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.about-tile{margin-bottom:12px;padding:14px}.about-tile .icon{margin-bottom:10px}.dream-card{padding:19px;background:linear-gradient(135deg,#d6b56d12,#79d6d010,#ffffff04);border-color:#79d6d02b}.dream-label{font-size:10px;letter-spacing:1.7px;color:#79d6d0}.music-card{margin:28px 0 18px;padding:18px;border-color:#79d6d03a;background:linear-gradient(145deg,#101d31ee,#080d1bee 75%,#201a19ee)}.music-head{display:flex;align-items:center;gap:13px;margin-bottom:15px}.music-art{width:57px;height:57px;flex:0 0 57px;position:relative;overflow:hidden;border-radius:17px;display:flex;align-items:center;justify-content:center;gap:3px;background:radial-gradient(circle at 30% 20%,#d6b56d66,transparent 45%),linear-gradient(135deg,#152c48,#070a12);border:1px solid #d6b56d55;color:#e6d09a;font-size:27px}.music-art i{position:absolute;bottom:8px;width:3px;border-radius:4px;background:#79d6d0;opacity:.75}.music-art i:nth-of-type(1){height:9px;left:12px}.music-art i:nth-of-type(2){height:16px;left:18px}.music-art i:nth-of-type(3){height:11px;left:24px}.music-kicker{display:block;font-size:9px;letter-spacing:1.3px;color:#79d6d0;margin-bottom:5px}.music-title{display:block;font:23px Georgia,serif;margin-bottom:4px}.music-dot{width:7px;height:7px;border-radius:50%;background:#d6b56d;box-shadow:0 0 13px #d6b56d99;align-self:flex-start;margin-top:7px}#loveAudio{display:block;width:100%;height:42px;accent-color:#d6b56d} .lyricless-motivation{display:flex;align-items:flex-start;gap:10px;margin-top:14px;padding:13px;border-radius:15px;background:#79d6d00b;border:1px solid #79d6d01e}.pulse-star{color:#d6b56d;animation:starPulse 2s ease-in-out infinite}.lyricless-motivation p{font-size:13px;line-height:1.6;color:#d6dfef;margin:0;animation:motivationIn .5s ease both}.music-card.is-playing .music-art i{animation:equalize .65s ease-in-out infinite alternate}.music-card.is-playing .music-art i:nth-of-type(2){animation-delay:.2s}.music-card.is-playing .music-art i:nth-of-type(3){animation-delay:.4s}.music-note{font-size:10px;line-height:1.5;color:#8190a8;margin-top:10px}.music-note b{color:#cbd7e8}@keyframes starPulse{0%,100%{opacity:.65;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}}@keyframes equalize{from{transform:scaleY(.5);transform-origin:bottom}to{transform:scaleY(1.3);transform-origin:bottom}}@keyframes motivationIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:370px){.about-grid{grid-template-columns:1fr}.about-tile{display:grid;grid-template-columns:45px 1fr;column-gap:10px}.about-tile .icon{grid-row:span 2;width:42px;height:42px;font-size:20px;margin:0}.music-card{padding:14px}}
+@media(min-width:600px){body{padding:16px 0}.app{height:calc(100dvh - 32px);min-height:650px;border:1px solid #ffffff18;border-radius:28px}.track{border-radius:28px}}
+@media(max-width:370px){.page{padding-left:17px;padding-right:17px}.tab span{font-size:9px}.nav{left:8px;right:8px;gap:0}.tab svg{width:21px;height:21px}}
+
+/* Polished motion layer: subtle gold particles + scroll reveals */
+.app:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.46;background-image:radial-gradient(circle at 12% 24%,#f0d99b9c 0 1px,transparent 2px),radial-gradient(circle at 76% 18%,#79d6d080 0 1px,transparent 2px),radial-gradient(circle at 83% 68%,#f0d99b80 0 1.3px,transparent 2px),radial-gradient(circle at 24% 78%,#ffffff55 0 1px,transparent 2px),radial-gradient(circle at 54% 43%,#d6b56d66 0 1px,transparent 2px);background-size:260px 310px,330px 290px,300px 360px,280px 340px,360px 300px;animation:particleDrift 24s linear infinite}
+@keyframes particleDrift{0%{background-position:0 0,0 0,0 0,0 0,0 0}100%{background-position:45px -90px,-55px 70px,80px -60px,-40px 85px,65px -45px}}
+.track{z-index:2}
+.reveal-ready{opacity:0;transform:translateY(15px) scale(.99);filter:blur(3px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1),filter .6s ease}
+.reveal-ready.revealed{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+@media(prefers-reduced-motion:reduce){.app:before{animation:none}.reveal-ready{opacity:1;transform:none;filter:none;transition:none}}
+
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+/* PERFORMANCE MODE: tuned for lower-end Android phones */
+.app:before{animation:none!important;opacity:.22!important;background-size:220px 260px!important}
+.glass,.card,.nav,.demo-backdrop{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.glass,.card{background:linear-gradient(135deg,#172238f5,#0b1220f5)!important;box-shadow:inset 0 1px #ffffff0b,0 5px 14px #0002!important}
+.nav{background:#101827f5!important;box-shadow:0 7px 18px #0005,inset 0 1px #ffffff12!important}
+.page{transition:none!important;perspective:none!important}
+.page.motion-in{animation:litePageIn .18s ease-out both!important}
+@keyframes litePageIn{from{opacity:.85}to{opacity:1}}
+.orb{animation:none!important;box-shadow:inset -8px -8px 16px #020b3266,0 0 18px #d6b56d10!important;transition:transform .2s!important}
+.liquid:before,.music-card.is-playing .music-art i,.pulse-star,.lyricless-motivation p{animation:none!important}
+.feature-glow{filter:none!important;opacity:.65}
+.reveal-ready,.reveal-ready.revealed{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+.demo-backdrop.open{animation:none!important}
+.demo-panel{animation:none!important;box-shadow:0 8px 25px #0008!important}
+
+
+/* Lightweight welcome intro + code lab */
+.welcome-screen{position:fixed;z-index:100;inset:0;display:grid;place-items:center;background:#050811;color:#f2f4f8;text-align:center;padding:24px;animation:welcomeOut .7s ease 2.75s forwards;pointer-events:none}
+.welcome-inner{animation:welcomeIn .9s cubic-bezier(.2,.8,.2,1) both}
+.welcome-mark{width:62px;height:62px;margin:0 auto 15px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#f0d99b,#a98543);color:#101522;font:bold 30px Georgia,serif;box-shadow:0 0 0 7px #d6b56d12}
+.welcome-name{font:22px Georgia,serif;letter-spacing:1px}.welcome-sub{font-size:10px;letter-spacing:3px;color:#d6b56d;margin-top:10px}
+@keyframes welcomeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes welcomeOut{to{opacity:0;visibility:hidden}}
+.code-lab{display:none;position:relative;z-index:2}.code-lab p{font-size:12px}.code-editor{display:block;position:relative;z-index:5;pointer-events:auto;touch-action:manipulation;-webkit-user-select:text;user-select:text; -webkit-appearance:none;appearance:none;width:100%;min-height:190px;resize:vertical;border:1px solid #d6b56d88;border-radius:15px;background:#050914;color:#dce8f6;padding:13px;font:14px/1.55 monospace;outline:none;opacity:1;visibility:visible;caret-color:#d6b56d;}.code-editor:focus{border-color:#d6b56d;box-shadow:0 0 0 2px #d6b56d20}.code-run{display:flex;gap:8px;margin:10px 0}.code-preview{width:100%;height:205px;border:1px solid #ffffff25;border-radius:15px;background:white}
+@media(prefers-reduced-motion:reduce){.welcome-screen,.welcome-inner{animation:none!important}.welcome-screen{display:none!important}}
+
+
+/* LIQUID GLASS REFINEMENT — neutral, realistic glass; no drag trails */
+.nav{
+  background:linear-gradient(135deg,rgba(244,247,255,.15),rgba(150,165,190,.07) 48%,rgba(255,255,255,.10))!important;
+  border:1px solid rgba(255,255,255,.28)!important;
+  border-radius:22px!important;
+  backdrop-filter:blur(24px) saturate(155%)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(155%)!important;
+  box-shadow:0 12px 32px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(255,255,255,.06)!important;
+}
+.liquid{
+  border-radius:13px!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.24),rgba(255,255,255,.09) 52%,rgba(220,230,245,.15))!important;
+  border:1px solid rgba(255,255,255,.48)!important;
+  backdrop-filter:blur(14px) saturate(145%)!important;
+  -webkit-backdrop-filter:blur(14px) saturate(145%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.62),inset 0 -1px 0 rgba(255,255,255,.12),0 2px 7px rgba(0,0,0,.13)!important;
+  transition:left .2s cubic-bezier(.2,.75,.25,1),width .16s ease!important;
+}
+.liquid:before{content:none!important;animation:none!important}
+.liquid:after{inset:1px!important;border-radius:12px!important;background:linear-gradient(120deg,rgba(255,255,255,.16),transparent 42%,rgba(255,255,255,.06))!important;opacity:1!important}
+.nav.is-dragging .liquid{filter:none!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.62),0 2px 7px rgba(0,0,0,.13)!important}
+.demo-nav-wrap{
+  background:linear-gradient(135deg,rgba(244,247,255,.14),rgba(150,165,190,.06) 52%,rgba(255,255,255,.09))!important;
+  border:1px solid rgba(255,255,255,.25)!important;border-radius:21px!important;
+  backdrop-filter:blur(22px) saturate(150%)!important;-webkit-backdrop-filter:blur(22px) saturate(150%)!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.25),inset 0 1px rgba(255,255,255,.24)!important;
+}
+.demo-nav-liquid{border-radius:12px!important;background:linear-gradient(145deg,rgba(255,255,255,.23),rgba(255,255,255,.08) 60%,rgba(220,230,245,.13))!important;border:1px solid rgba(255,255,255,.42)!important;backdrop-filter:blur(12px) saturate(145%)!important;-webkit-backdrop-filter:blur(12px) saturate(145%)!important;box-shadow:inset 0 1px rgba(255,255,255,.55),0 2px 6px rgba(0,0,0,.12)!important}
+.demo-nav-liquid:after{border-radius:11px!important;background:linear-gradient(120deg,rgba(255,255,255,.13),transparent 48%,rgba(255,255,255,.05))!important}
+.water-bubble{display:none!important}
+@media(prefers-reduced-transparency:reduce){.nav,.demo-nav-wrap,.liquid,.demo-nav-liquid{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:#1a2435f2!important}}
+
+
+
+/* ORGANIC WATER GLASS — soft fluid silhouette, no square indicator and no drag trail */
+.nav{
+  border-radius:30px!important;
+  background:linear-gradient(135deg,rgba(235,242,255,.13),rgba(174,190,214,.055) 42%,rgba(255,255,255,.095))!important;
+  border:1px solid rgba(255,255,255,.23)!important;
+  -webkit-backdrop-filter:blur(30px) saturate(165%)!important;
+  backdrop-filter:blur(30px) saturate(165%)!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(255,255,255,.045)!important;
+}
+.liquid{
+  border-radius:43% 57% 52% 48% / 42% 45% 55% 58%!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.30) 0%,rgba(239,246,255,.15) 35%,rgba(183,204,230,.08) 68%,rgba(255,255,255,.19) 100%)!important;
+  border:1px solid rgba(255,255,255,.47)!important;
+  -webkit-backdrop-filter:blur(20px) saturate(175%)!important;
+  backdrop-filter:blur(20px) saturate(175%)!important;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.62),inset 0 -2px 5px rgba(255,255,255,.07),0 3px 12px rgba(0,0,0,.14)!important;
+  transition:left .22s cubic-bezier(.2,.75,.25,1),width .16s ease,border-radius .3s ease!important;
+  animation:waterSurface 5.8s ease-in-out infinite;
+}
+.liquid:before{content:""!important;position:absolute!important;inset:1px!important;border-radius:inherit!important;background:radial-gradient(ellipse at 24% 12%,rgba(255,255,255,.27),transparent 43%),linear-gradient(115deg,transparent 20%,rgba(255,255,255,.09) 48%,transparent 75%)!important;opacity:1!important;pointer-events:none!important;animation:none!important}
+.liquid:after{content:""!important;inset:2px!important;border-radius:inherit!important;background:linear-gradient(160deg,rgba(255,255,255,.11),transparent 45%,rgba(255,255,255,.045))!important;opacity:1!important}
+.nav.is-dragging .liquid{filter:brightness(1.04)!important;animation:none!important;box-shadow:inset 0 1px 1px rgba(255,255,255,.62),0 3px 12px rgba(0,0,0,.13)!important}
+@keyframes waterSurface{0%,100%{border-radius:43% 57% 52% 48% / 42% 45% 55% 58%}50%{border-radius:52% 48% 44% 56% / 49% 57% 43% 51%}}
+.demo-nav-wrap{border-radius:27px!important;background:linear-gradient(135deg,rgba(235,242,255,.12),rgba(174,190,214,.05) 48%,rgba(255,255,255,.08))!important;border:1px solid rgba(255,255,255,.22)!important;-webkit-backdrop-filter:blur(26px) saturate(160%)!important;backdrop-filter:blur(26px) saturate(160%)!important;box-shadow:0 10px 26px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.2)!important}
+.demo-nav-liquid{border-radius:43% 57% 52% 48% / 42% 45% 55% 58%!important;background:linear-gradient(145deg,rgba(255,255,255,.29),rgba(239,246,255,.13) 42%,rgba(183,204,230,.08) 70%,rgba(255,255,255,.17))!important;border:1px solid rgba(255,255,255,.45)!important;-webkit-backdrop-filter:blur(18px) saturate(170%)!important;backdrop-filter:blur(18px) saturate(170%)!important;box-shadow:inset 0 1px rgba(255,255,255,.6),0 3px 10px rgba(0,0,0,.12)!important;animation:waterSurface 5.8s ease-in-out infinite}
+.demo-nav-liquid:after{border-radius:inherit!important;background:radial-gradient(ellipse at 24% 12%,rgba(255,255,255,.22),transparent 44%),linear-gradient(120deg,transparent 20%,rgba(255,255,255,.09) 48%,transparent 76%)!important}
+.water-bubble{display:none!important}
+@media(prefers-reduced-motion:reduce){.liquid,.demo-nav-liquid{animation:none!important}}
+
+
+/* SMOOTH MODE — prioritize transform animations and reduce costly paint work on mobile */
+.page{transition:none!important;perspective:none!important;backface-visibility:hidden;contain:layout style;}
+.page.motion-in{animation:litePageIn .16s ease-out both!important}
+@keyframes litePageIn{from{opacity:.94;transform:translate3d(0,3px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+.glass,.card,.calc-shell{backdrop-filter:blur(12px) saturate(125%)!important;-webkit-backdrop-filter:blur(12px) saturate(125%)!important}
+.nav{backdrop-filter:blur(16px) saturate(145%)!important;-webkit-backdrop-filter:blur(16px) saturate(145%)!important;box-shadow:0 8px 22px rgba(0,0,0,.26),inset 0 1px rgba(255,255,255,.2)!important}
+.liquid{left:0!important;will-change:transform,width;border-radius:43% 57% 52% 48% / 42% 45% 55% 58%!important;backdrop-filter:blur(10px) saturate(145%)!important;-webkit-backdrop-filter:blur(10px) saturate(145%)!important;transition:transform .32s cubic-bezier(.22,1,.36,1),width .22s ease,border-radius .28s ease!important;animation:waterSurface 7s ease-in-out infinite!important}
+.nav.is-dragging .liquid{transition:none!important;animation:none!important;filter:none!important}
+.liquid:before{background:radial-gradient(ellipse at 24% 12%,rgba(255,255,255,.22),transparent 43%),linear-gradient(115deg,transparent 20%,rgba(255,255,255,.06) 48%,transparent 75%)!important}
+.demo-nav-wrap,.demo-nav-liquid{backdrop-filter:blur(12px) saturate(135%)!important;-webkit-backdrop-filter:blur(12px) saturate(135%)!important}
+.demo-nav-liquid{will-change:transform,width;animation:waterSurface 7s ease-in-out infinite!important}
+.demo-backdrop{backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important}
+.orb{animation:orbFloat 8s ease-in-out infinite!important;box-shadow:inset -10px -8px 20px #020b3266,0 0 20px #d6b56d10!important}
+.feature-glow{filter:none!important;opacity:.7}
+.water-bubble{display:none!important}
+@media(prefers-reduced-motion:reduce){.page.motion-in,.orb,.liquid,.demo-nav-liquid{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="welcome-screen" id="welcomeScreen" aria-label="Selamat datang di portofolio"><div class="welcome-inner"><div class="welcome-mark">U</div><div class="welcome-name">MUHAMAD ULIL ALBAB</div><div class="welcome-sub">RPL STUDENT · CREATIVE BUILDER</div></div></div>
+<main class="app">
+<header class="top"><div class="brand"><div class="mark">U</div> MUHAMAD ULIL ALBAB</div><span>LIQUID SERIES · LITE</span></header>
+<div class="track" id="track">
+<section class="page">
+<div class="orb"></div><span class="pill">✦ PERSONAL PORTFOLIO</span>
+<h1>Halo,<br><span style="color:#d6b56d;font-size:clamp(30px,7.6vw,43px);letter-spacing:-1px">Muhamad Ulil Albab.</span></h1>
+<p class="muted" style="font-size:15px;max-width:290px">Membangun ide, belajar teknologi, dan menciptakan sesuatu yang berarti.</p>
+<div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:25px"><button class="btn hot" data-go="1">Kenali saya ↗</button><button class="btn" data-go="2">Keahlian saya</button></div>
+<div class="home-feature glass" style="padding:20px;margin-top:34px;position:relative;overflow:hidden"><div class="feature-glow"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;position:relative"><div><div style="font-size:10px;letter-spacing:1.7px;color:#d6b56d;margin-bottom:10px">✦ MY JOURNEY</div><div style="font:26px/1.18 Georgia,serif">Dari rasa ingin tahu,<br>jadi karya nyata.</div></div><div class="journey-icon">⌘</div></div><p class="muted" style="font-size:13px;position:relative;margin-bottom:17px">Satu baris kode hari ini, satu langkah lebih dekat ke masa depan.</p><div class="mini-stats"><div><b>01</b><span>Terus belajar</span></div><div><b>02</b><span>Berani mencoba</span></div><div><b>∞</b><span>Ide berkembang</span></div></div><button class="btn hot" data-go="1" style="margin-top:17px;width:100%">Jelajahi perjalanan saya ↗</button></div>
+<div class="quote-strip"><span class="quote-mark">“</span><span>Jangan tunggu hebat untuk memulai. Mulailah untuk menjadi hebat.</span><i>— Catatan untuk diri sendiri</i></div>
+<div class="hint">GESER LAYAR KE KIRI →</div>
+</section>
+<section class="page">
+<span class="pill">01 — ABOUT ME</span><h2 style="margin-top:22px">Tentang saya.</h2>
+<div class="glass" style="padding:20px;margin-bottom:15px"><div style="display:flex;align-items:center;gap:14px;margin-bottom:15px"><div class="mark" style="width:60px;height:60px;font-size:24px">U</div><div><b style="font-size:18px">Muhamad Ulil Albab</b><div class="muted" style="font-size:12px">Pelajar · Rekayasa Perangkat Lunak</div></div></div><p class="muted" style="font-size:14px">Saya pelajar RPL yang tertarik pada teknologi, desain antarmuka, dan pengembangan website. Saya senang mempelajari hal baru dan mengubah ide menjadi karya digital.</p></div>
+<div class="about-grid"><div class="card about-tile"><div class="icon">🎮</div><b>Hobi saya</b><p class="muted" style="font-size:13px;margin-bottom:0">Ngulik teknologi, desain website, bermain game, dan mencoba hal baru.</p></div><div class="card about-tile"><div class="icon">🚀</div><b>Cita-cita</b><p class="muted" style="font-size:13px;margin-bottom:0">Menjadi developer yang andal dan membuat karya digital yang bermanfaat.</p></div></div><div class="card dream-card"><span class="dream-label">MY NORTH STAR ✦</span><div style="font:23px/1.25 Georgia,serif;margin:9px 0">Belajar hari ini.<br>Menciptakan masa depan.</div><p class="muted" style="font-size:13px;margin-bottom:0">Aku percaya kemampuan tumbuh dari rasa ingin tahu, konsistensi, dan keberanian untuk mencoba.</p></div><button class="btn hot" data-go="2" style="width:100%">Lihat keahlian →</button><div class="hint">← GESER KE HALAMAN BERIKUTNYA →</div>
+</section>
+<section class="page">
+<span class="pill">02 — MY SKILLS</span><h2 style="margin-top:22px">Keahlian & minat.</h2><p class="muted" style="font-size:14px">Hal yang aku pelajari, sukai, dan terus kembangkan.</p>
+<div class="skill-grid">
+<div class="skill-card"><div class="skill-symbol"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9M12 3c-3 3-4 6-4 9s1 6 4 9"/></svg></div><b>HTML</b><p>Menyusun struktur halaman website.</p><div class="progress"><i style="width:45%"></i></div></div>
+<div class="skill-card"><div class="skill-symbol"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/><circle cx="12" cy="12" r="8.5"/></svg></div><b>CSS & UI</b><p>Mengatur warna, layout, dan tampilan.</p><div class="progress"><i style="width:38%"></i></div></div>
+<div class="skill-card"><div class="skill-symbol"><svg viewBox="0 0 24 24"><path d="M7 8H5a3 3 0 0 0-3 3v3a3 3 0 0 0 3 3h3l3-3h2l3 3h3a3 3 0 0 0 3-3v-3a3 3 0 0 0-3-3h-2l-2-2H9z"/><path d="M6 11v4m-2-2h4M16 12h.01M19 14h.01"/></svg></div><b>Main game</b><p>Suka bermain game dan belajar strategi.</p><div class="progress"><i style="width:70%"></i></div></div>
+<div class="skill-card"><div class="skill-symbol"><svg viewBox="0 0 24 24"><path d="M4 20 15 9M13 4l7 7M11 6l7 7M3 21l5-1-4-4z"/><path d="M15 3l6 6"/></svg></div><b>Badminton</b><p>Menikmati olahraga, fokus, dan footwork.</p><div class="progress"><i style="width:65%"></i></div></div>
+<div class="skill-card"><div class="skill-symbol"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H4zM8 20h8M12 16v4"/><path d="m8 9 2 2-2 2m4 0h3"/></svg></div><b>Python</b><p>Belajar logika dan pemecahan masalah.</p><div class="progress"><i style="width:30%"></i></div></div>
+<div class="skill-card"><div class="skill-symbol"><svg viewBox="0 0 24 24"><path d="M12 3 14.8 9.2 21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8z"/><path d="m19 2 .8 2.2L22 5l-2.2.8L19 8l-.8-2.2L16 5l2.2-.8z"/></svg></div><b>Kreativitas</b><p>Mencoba ide baru dan merancang karya digital.</p><div class="progress"><i style="width:50%"></i></div></div>
+</div><p class="muted" style="font-size:11px">Indikator hanya ilustrasi, bukan penilaian kemampuan resmi.</p><button class="btn hot" data-go="3">Lihat proyek →</button>
+</section>
+<section class="page">
+<span class="pill">03 — SELECTED WORK</span><h2 style="margin-top:22px">Proyek pilihan.</h2><p class="muted" style="font-size:14px">Ketuk salah satu kartu untuk mencoba demo interaktifnya.</p>
+<button class="card project-open" data-project="liquid" style="width:100%"><div class="project-cover" style="background:radial-gradient(circle at 82% 18%,#79d6d033,transparent 34%),linear-gradient(135deg,#273a59,#080d1b)"><small style="color:#d6b56d">INTERACTION DESIGN · 001</small><div style="font:25px Georgia,serif;margin-top:12px">Liquid Navbar Lab</div><div style="font-size:11px;color:#aab5c8;margin-top:8px">Geser dan tekan menu kaca ↗</div></div><b>Liquid Navigation</b><p class="muted" style="font-size:13px">Navbar kaca interaktif dengan indikator cair yang mengikuti menu dan bisa digeser.</p><span class="pill">LIQUID UI · TOUCH</span></button>
+<button class="card project-open" data-project="calculator" style="width:100%"><div class="project-cover" style="background:radial-gradient(circle at 80% 18%,#d6b56d2b,transparent 36%),linear-gradient(135deg,#273a43,#101725)"><small style="color:#79d6d0">JAVASCRIPT · 002</small><div style="font:25px Georgia,serif;margin-top:12px">Simple Calculator</div><div style="font-size:11px;color:#aab5c8;margin-top:8px">Tap untuk mencoba kalkulator ↗</div></div><b>Kalkulator Liquid Glass</b><p class="muted" style="font-size:13px">Kalkulator interaktif dengan operasi dasar dan tampilan kaca.</p><span class="pill">LIQUID UI · MATH</span></button>
+<button class="card project-open" data-project="codelab" style="width:100%"><div class="project-cover" style="background:radial-gradient(circle at 80% 18%,#79d6d022,transparent 36%),linear-gradient(135deg,#142c35,#101725)"><small style="color:#d6b56d">HTML · CSS · JS · 003</small><div style="font:25px Georgia,serif;margin-top:12px">Mini Code Lab</div><div style="font-size:11px;color:#aab5c8;margin-top:8px">Tulis kode dan jalankan langsung ↗</div></div><b>Playground Coding</b><p class="muted" style="font-size:13px">Coba ubah HTML, CSS, dan JavaScript lalu lihat hasilnya di preview.</p><span class="pill">LIVE PREVIEW · SANDBOX</span></button>
+<button class="card project-open" data-project="palette" style="width:100%"><div class="project-cover" style="background:radial-gradient(circle at 80% 18%,#79d6d033,transparent 36%),linear-gradient(135deg,#172c40,#101725)"><small style="color:#79d6d0">COLOR TOOLS · 004</small><div style="font:25px Georgia,serif;margin-top:12px">Palette Studio</div><div style="font-size:11px;color:#aab5c8;margin-top:8px">Generate warna dan salin HEX ↗</div></div><b>Color Palette Studio</b><p class="muted" style="font-size:13px">Pembuat palet warna navy, gold, dan ice untuk inspirasi desain UI.</p><span class="pill">COLOR · DESIGN</span></button>
+<button class="btn hot" data-go="4">Hubungi saya →</button>
+</section>
+<section class="page">
+<span class="pill">04 — GET IN TOUCH</span><h2 style="margin-top:22px">Mari terhubung.</h2><p class="muted" style="font-size:14px">Punya ide menarik atau ingin berdiskusi tentang teknologi? Kamu bisa menghubungi saya.</p>
+<div class="glass" style="padding:22px;margin:22px 0"><div style="font-size:30px;margin-bottom:12px">✉</div><b>Let's create something.</b><p class="muted" style="font-size:13px">Tambahkan akunmu agar pengunjung bisa menghubungimu.</p></div>
+<button class="btn hot" id="whatsappButton" style="display:flex;width:100%;margin-bottom:10px">Chat WhatsApp ↗</button><a class="btn" style="display:flex;width:100%" href="https://instagram.com/" target="_blank" rel="noopener">Instagram ↗</a><p class="muted" style="font-size:12px">Saat tombol WhatsApp ditekan, masukkan nomor WhatsApp kamu dengan kode negara, misalnya 6281234567890. Nomor tidak perlu diawali tanda +.</p>
+<div class="music-card glass" id="musicCard"><div class="music-head"><div class="music-art"><span>♫</span><i></i><i></i><i></i></div><div style="flex:1;min-width:0"><span class="music-kicker">SOUNDTRACK FOR THE SOUL</span><b class="music-title">Jatuh Suka</b><span class="muted" style="font-size:11px">TULUS · Official Lyric Video</span></div><span class="music-dot"></span></div><div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:16px;border:1px solid #d6b56d55;background:#050914"><iframe title="TULUS - Jatuh Suka (Official Lyric Video)" src="https://www.youtube-nocookie.com/embed/2uJut6USftQ?playsinline=1&rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="music-note">Tekan tombol ▶ pada pemutar YouTube untuk mendengarkan lagu. Pemutar resmi ini membutuhkan koneksi internet; pengunjung bisa memutarnya langsung di website tanpa memilih file dari HP.</p><div class="lyricless-motivation" aria-live="polite"><span class="pulse-star">✦</span><p>Semoga setiap langkahmu membawa cerita baik, seperti lagu yang menemani perjalananmu.</p></div><div style="margin-top:12px"><a class="btn" style="display:flex;justify-content:center" href="https://www.youtube.com/watch?v=2uJut6USftQ" target="_blank" rel="noopener">Buka di YouTube ↗</a></div></div>
+<button class="btn" data-go="0">↶ Kembali ke beranda</button>
+</section>
+</div>
+<nav class="nav" id="nav" aria-label="Navigasi halaman"><div class="liquid" id="liquid"></div>
+<button class="tab active" data-tab="0"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Beranda</span></button>
+<button class="tab" data-tab="1"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><span>Tentang</span></button>
+<button class="tab" data-tab="2"><svg viewBox="0 0 24 24"><path d="M4 19V9m8 10V4m8 15v-7"/></svg><span>Keahlian</span></button>
+<button class="tab" data-tab="3"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 4v5"/></svg><span>Proyek</span></button>
+<button class="tab" data-tab="4"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><span>Kontak</span></button>
+</nav>
+
+<div class="demo-backdrop" id="demoBackdrop" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
+ <div class="demo-panel"><div class="demo-top"><div><span class="pill" id="demoKicker">INTERACTIVE DEMO</span><h2 id="demoTitle" style="margin:12px 0 0">Simple Calculator</h2></div><button class="demo-close" id="demoClose" aria-label="Tutup demo">×</button></div>
+ <div id="calculatorDemo" style="display:none"><p class="muted" style="font-size:12px;margin-top:0">Kalkulator Liquid Glass · operasi dasar</p><div class="calc-shell"><div class="calc-screen"><div id="calcExpression"></div><div id="calcDisplay" aria-live="polite">0</div></div><div class="calc-keys">
+ <button class="calc-key" data-calc="clear">AC</button><button class="calc-key" data-calc="sign">+/−</button><button class="calc-key" data-calc="percent">%</button><button class="calc-key op" data-calc="÷">÷</button>
+ <button class="calc-key" data-calc="7">7</button><button class="calc-key" data-calc="8">8</button><button class="calc-key" data-calc="9">9</button><button class="calc-key op" data-calc="×">×</button>
+ <button class="calc-key" data-calc="4">4</button><button class="calc-key" data-calc="5">5</button><button class="calc-key" data-calc="6">6</button><button class="calc-key op" data-calc="−">−</button>
+ <button class="calc-key" data-calc="1">1</button><button class="calc-key" data-calc="2">2</button><button class="calc-key" data-calc="3">3</button><button class="calc-key op" data-calc="+">+</button>
+ <button class="calc-key wide" data-calc="0">0</button><button class="calc-key" data-calc=".">.</button><button class="calc-key gold" data-calc="equals">=</button>
+ </div></div></div>
+ <div id="liquidDemo" style="display:none"><p class="muted" style="font-size:12px">Coba tekan menu atau geser kapsul kaca ke kiri dan kanan. Ini demo navbar, bukan navigasi utama website.</p><div class="demo-nav-wrap" id="demoNavWrap"><div class="demo-nav-liquid" id="demoNavLiquid"></div><button class="demo-nav-item active" data-demo-nav="0">⌂<span>Home</span></button><button class="demo-nav-item" data-demo-nav="1">◇<span>Explore</span></button><button class="demo-nav-item" data-demo-nav="2">✦<span>Studio</span></button><button class="demo-nav-item" data-demo-nav="3">☰<span>Menu</span></button></div><div class="demo-nav-stage"><div class="liquid-demo-orb" id="liquidDemoOrb"></div><b id="liquidDemoLabel">Home · Liquid Glass</b><p class="muted" id="liquidDemoText" style="font-size:12px">Indikator kaca mengikuti pilihanmu dengan animasi ringan.</p></div><button class="btn hot" id="liquidRipple" style="width:100%">Beri efek riak ✦</button></div>
+ <div id="paletteDemo" style="display:none"><p class="muted" style="font-size:12px">Pilih palet untuk melihat warna, lalu tekan warna untuk menyalin kode HEX.</p><div class="palette-swatches"><button class="palette-swatch" data-hex="#0B1427" style="background:#0B1427"><span>#0B1427</span></button><button class="palette-swatch" data-hex="#D6B56D" style="background:#D6B56D"><span>#D6B56D</span></button><button class="palette-swatch" data-hex="#79D6D0" style="background:#79D6D0"><span>#79D6D0</span></button><button class="palette-swatch" data-hex="#F2F4F8" style="background:#F2F4F8;color:#101522"><span>#F2F4F8</span></button></div><div class="palette-preview" id="palettePreview"><b>YOUR NEXT IDEA</b><p>Design starts with color.</p><span id="paletteStatus">Pilih warna untuk menyalin HEX.</span></div><button class="btn hot" id="paletteShuffle" style="width:100%;margin-top:12px">Acak palet ✦</button></div>
+ <div id="codeLabDemo" class="code-lab"><p class="muted">Ubah kode di bawah, lalu tekan <b>Jalankan kode</b>. Preview berjalan terpisah dari portofolio.</p><textarea class="code-editor" id="codeEditor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" inputmode="text" enterkeyhint="enter" aria-label="Editor kode" placeholder="Tulis HTML, CSS, atau JavaScript di sini..."></textarea><div class="code-run"><button class="btn hot" id="runCode" style="flex:1">▶ Jalankan kode</button><button class="btn" id="resetCode">Reset</button></div><iframe class="code-preview" id="codePreview" title="Preview hasil coding" sandbox="allow-scripts"></iframe><p class="muted" style="font-size:11px">Tips: coba ubah teks di dalam tag &lt;h1&gt; atau warna pada CSS.</p></div>
+ </div>
+</div>
+</main>
+<script>
+(()=>{
+const welcomeScreen=document.getElementById('welcomeScreen');
+if(welcomeScreen){welcomeScreen.addEventListener('animationend',(event)=>{if(event.animationName==='welcomeOut')welcomeScreen.remove();});setTimeout(()=>{if(welcomeScreen.isConnected)welcomeScreen.remove();},3700);}
+const track=document.getElementById('track');
+const pages=[...track.querySelectorAll('.page')];
+const tabs=[...document.querySelectorAll('.tab')];
+const nav=document.getElementById('nav');
+const liquid=document.getElementById('liquid');
+let current=0, scrollTimer=null, isTouching=false, dragging=false, moved=false, navScrollLock=false;
+let startX=0,startY=0,lastX=0,touchedTab=0, activePointer=null, suppressClick=false;
+const ease='transform .32s cubic-bezier(.22,1,.36,1),width .22s ease,border-radius .28s ease';
+function clamp(i){return Math.max(0,Math.min(tabs.length-1,Number(i)||0));}
+function placeLiquid(i,animate=true){
+  const t=tabs[clamp(i)], n=nav.getBoundingClientRect(), r=t.getBoundingClientRect();
+  liquid.style.transition=animate?ease:'none';
+  liquid.style.width=r.width+'px';
+  liquid.style.left='0px';
+  liquid.style.transform='translate3d('+(r.left-n.left)+'px,0,0)';
+  liquid.style.borderRadius='43% 57% 52% 48% / 42% 45% 55% 58%';
+}
+function setActive(i,animatePage=true){
+  i=clamp(i); const changed=i!==current; current=i;
+  tabs.forEach((t,j)=>{t.classList.toggle('active',j===i);t.setAttribute('aria-current',j===i?'page':'false');});
+  if(changed&&animatePage){const page=pages[i];page.classList.remove('motion-in');void page.offsetWidth;page.classList.add('motion-in');setTimeout(()=>page.classList.remove('motion-in'),760);}
+  if(!dragging) placeLiquid(i,true);
+}
+function go(i){i=clamp(i);navScrollLock=true;setActive(i);track.scrollTo({left:i*track.clientWidth,behavior:'smooth'});clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{track.scrollTo({left:current*track.clientWidth,behavior:'auto'});navScrollLock=false;setActive(current,false);placeLiquid(current,true);},520);}
+function tabAtX(x){let best=0,dist=Infinity;tabs.forEach((t,i)=>{const r=t.getBoundingClientRect(),d=Math.abs(x-(r.left+r.width/2));if(d<dist){dist=d;best=i;}});return best;}
+function addWaterBubble(){/* Drag trail removed intentionally. */}
+function moveLiquid(x){
+ const nr=nav.getBoundingClientRect(), first=tabs[0].getBoundingClientRect(), last=tabs[tabs.length-1].getBoundingClientRect();
+ const width=first.width, min=first.left-nr.left, max=Math.max(min,last.right-nr.left-width);
+ const pos=Math.max(min,Math.min(max,x-nr.left-width/2));
+ liquid.style.transition='none';liquid.style.width=width+'px';liquid.style.left='0px';liquid.style.transform='translate3d('+pos+'px,0,0)';addWaterBubble(nav,x-nr.left,nav.clientHeight/2);
+}
+function begin(x,y,tabIndex){isTouching=true;dragging=false;moved=false;startX=lastX=x;startY=y;touchedTab=tabIndex;nav.classList.add('is-dragging');}
+function update(x,y){if(!isTouching)return;lastX=x;if(Math.abs(x-startX)>6 && Math.abs(x-startX)>Math.abs(y-startY)){dragging=true;moved=true;moveLiquid(x);}}
+function finish(x){if(!isTouching)return;lastX=x;const wasDrag=dragging;isTouching=false;dragging=false;nav.classList.remove('is-dragging');liquid.style.transition=ease;
+ if(wasDrag){suppressClick=true;go(tabAtX(x));setTimeout(()=>{suppressClick=false;},350);}else{placeLiquid(current,true);}lastTrailX=null;
+}
+// Touch handling is used on phones; avoiding pointer capture prevents WebView/preview jitter.
+nav.addEventListener('touchstart',e=>{if(!e.touches.length)return;const t=e.touches[0];const tab=e.target.closest('.tab');begin(t.clientX,t.clientY,tab?Number(tab.dataset.tab):current);},{passive:true});
+nav.addEventListener('touchmove',e=>{if(!isTouching||!e.touches.length)return;const t=e.touches[0];if(Math.abs(t.clientX-startX)>6&&Math.abs(t.clientX-startX)>Math.abs(t.clientY-startY))e.preventDefault();update(t.clientX,t.clientY);},{passive:false});
+nav.addEventListener('touchend',e=>{if(!isTouching)return;const t=e.changedTouches[0];finish(t.clientX);if(!moved){const tab=tabs[touchedTab];if(tab)go(touchedTab);}},{passive:true});
+nav.addEventListener('touchcancel',()=>{isTouching=false;dragging=false;nav.classList.remove('is-dragging');placeLiquid(current,true);},{passive:true});
+// Mouse support for desktop preview, without competing with touch events.
+nav.addEventListener('pointerdown',e=>{if(e.pointerType==='touch'||e.button!==0)return;const tab=e.target.closest('.tab');activePointer=e.pointerId;begin(e.clientX,e.clientY,tab?Number(tab.dataset.tab):current);});
+window.addEventListener('pointermove',e=>{if(activePointer!==e.pointerId)return;update(e.clientX,e.clientY);});
+window.addEventListener('pointerup',e=>{if(activePointer!==e.pointerId)return;activePointer=null;const wasDrag=dragging;finish(e.clientX);if(!wasDrag){const tab=e.target.closest('.tab');if(tab)go(Number(tab.dataset.tab));}});
+tabs.forEach((t,i)=>t.addEventListener('click',e=>{if(suppressClick){e.preventDefault();e.stopPropagation();return;}if(!isTouching)go(i);}));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(Number(b.dataset.go))));
+const orb=document.querySelector('.orb');
+if(orb){let waterTimer;const splash=()=>{orb.classList.remove('water-hit');void orb.offsetWidth;orb.classList.add('water-hit');clearTimeout(waterTimer);waterTimer=setTimeout(()=>orb.classList.remove('water-hit'),1200);};orb.addEventListener('pointerdown',splash);orb.setAttribute('role','button');orb.setAttribute('aria-label','Sentuh untuk efek riak air');}
+let scrollRaf=0;track.addEventListener('scroll',()=>{if(dragging||navScrollLock||scrollRaf)return;scrollRaf=requestAnimationFrame(()=>{scrollRaf=0;const w=Math.max(1,track.clientWidth),i=Math.round(track.scrollLeft/w);if(i!==current)setActive(i,false);});},{passive:true});
+track.addEventListener('scrollend',()=>{if(navScrollLock){clearTimeout(scrollTimer);navScrollLock=false;track.scrollTo({left:current*track.clientWidth,behavior:'auto'});placeLiquid(current,true);}else{const i=clamp(Math.round(track.scrollLeft/Math.max(1,track.clientWidth)));setActive(i,false);placeLiquid(i,true);}},{passive:true});
+window.addEventListener('resize',()=>{track.scrollTo({left:current*track.clientWidth,behavior:'auto'});placeLiquid(current,false);if(document.getElementById('demoBackdrop').classList.contains('open'))placeDemoNav(demoNavIndex);});
+requestAnimationFrame(()=>placeLiquid(0,false));
+
+// Gentle reveal animation, scoped to each horizontally-swiped page.
+try {
+ const revealTargets = document.querySelectorAll('.card,.skill-card,.project-open,.quote-strip,.home-feature,.about-grid,.calc-shell');
+ if ('IntersectionObserver' in window) {
+   revealTargets.forEach(el => el.classList.add('reveal-ready'));
+   document.querySelectorAll('.page').forEach(page => {
+     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+       if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }
+     }), {root:page, threshold:0.08});
+     page.querySelectorAll('.reveal-ready').forEach(el => observer.observe(el));
+   });
+ } else { revealTargets.forEach(el => el.classList.add('revealed')); }
+} catch (e) { document.querySelectorAll('.reveal-ready').forEach(el => el.classList.add('revealed')); }
+
+// Interactive project demos: calculator and liquid interface playground.
+const backdrop=document.getElementById('demoBackdrop'), calcDemo=document.getElementById('calculatorDemo'), liquidDemo=document.getElementById('liquidDemo'), codeLabDemo=document.getElementById('codeLabDemo');
+function openDemo(kind){backdrop.classList.add('open');document.body.style.overflow='hidden';const isCalc=kind==='calculator',isCode=kind==='codelab',isPalette=kind==='palette';calcDemo.style.display=isCalc?'block':'none';liquidDemo.style.display=(!isCalc&&!isCode&&!isPalette)?'block':'none';codeLabDemo.style.display=isCode?'block':'none';document.getElementById('paletteDemo').style.display=isPalette?'block':'none';document.getElementById('demoTitle').textContent=isCalc?'Simple Calculator':isCode?'Mini Code Lab':isPalette?'Palette Studio':'Liquid Navbar Lab';document.getElementById('demoKicker').textContent=isCalc?'INTERACTIVE CALCULATOR':isCode?'LIVE HTML PLAYGROUND':isPalette?'COLOR DESIGN TOOL':'DRAGGABLE LIQUID NAVBAR';if(isCalc)resetCalc();if(isCode){runCodePreview();setTimeout(()=>{codeEditor.focus({preventScroll:true});},120);}if(!isPalette&&!isCalc&&!isCode)requestAnimationFrame(()=>placeDemoNav(0));}
+function closeDemo(){backdrop.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('[data-project]').forEach(b=>b.addEventListener('click',()=>openDemo(b.dataset.project)));
+document.getElementById('demoClose').addEventListener('click',closeDemo);
+backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeDemo();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&backdrop.classList.contains('open'))closeDemo();});
+let calcValue='0',calcStored=null,calcOperator=null,calcNew=true,calcExpression='';
+const calcDisplay=document.getElementById('calcDisplay'),calcExpr=document.getElementById('calcExpression');
+function renderCalc(){calcDisplay.textContent=calcValue;calcExpr.textContent=calcExpression;calcDisplay.classList.remove('calc-display-pop');void calcDisplay.offsetWidth;calcDisplay.classList.add('calc-display-pop');}
+function resetCalc(){calcValue='0';calcStored=null;calcOperator=null;calcNew=true;calcExpression='';renderCalc();}
+function calculate(a,b,op){if(op==='+')return a+b;if(op==='−')return a-b;if(op==='×')return a*b;if(op==='÷')return b===0?null:a/b;return b;}
+function calcAction(key){if(/^\d$/.test(key)){if(calcNew){calcValue=key==='0'?'0':key;calcNew=false;}else if(calcValue.length<14){calcValue=calcValue==='0'&&key!=='0'?key:calcValue+key;} }
+else if(key==='.') {if(calcNew){calcValue='0.';calcNew=false;}else if(!calcValue.includes('.'))calcValue+='.';}
+else if(key==='clear'){resetCalc();return;}
+else if(key==='sign'){if(calcValue!=='0')calcValue=String(-Number(calcValue));}
+else if(key==='percent'){calcValue=String(Number(calcValue)/100);}
+else if(['+','−','×','÷'].includes(key)){if(calcStored!==null&&calcOperator&&!calcNew){const res=calculate(calcStored,Number(calcValue),calcOperator);if(res===null){calcValue='Error';calcStored=null;calcOperator=null;calcNew=true;calcExpression='Tidak bisa dibagi nol';renderCalc();return;}calcValue=String(Number(res.toPrecision(11)));}calcStored=Number(calcValue);calcOperator=key;calcExpression=calcValue+' '+key;calcNew=true;}
+else if(key==='equals'&&calcStored!==null&&calcOperator){const left=calcStored,right=Number(calcValue),op=calcOperator,res=calculate(left,right,op);calcExpression=left+' '+op+' '+right+' =';calcValue=res===null?'Error':String(Number(res.toPrecision(11)));calcStored=null;calcOperator=null;calcNew=true;}
+renderCalc();}
+document.querySelectorAll('[data-calc]').forEach(b=>b.addEventListener('click',()=>{b.classList.remove('is-tapped');void b.offsetWidth;b.classList.add('is-tapped');calcAction(b.dataset.calc);}));
+const liquidOrb=document.getElementById('liquidDemoOrb'),liquidLabel=document.getElementById('liquidDemoLabel'),liquidText=document.getElementById('liquidDemoText');
+const demoNav=document.getElementById('demoNavWrap'),demoNavLiquid=document.getElementById('demoNavLiquid'),demoNavItems=[...document.querySelectorAll('[data-demo-nav]')];let demoNavIndex=0,demoDragging=false,demoStartX=0,demoStartY=0,demoMoved=false;
+const demoNavCopy=[['Home · Liquid Glass','Indikator kaca mengikuti menu yang dipilih.'],['Explore · Discover','Pilih menu untuk berpindah indikator.'],['Studio · Create','Permukaan kaca bening dengan pantulan tipis.'],['Menu · More','Navigasi sederhana, bersih, dan responsif.']];
+function placeDemoNav(i,animate=true){demoNavIndex=Math.max(0,Math.min(3,i));const item=demoNavItems[demoNavIndex];if(!item||!demoNavLiquid||!demoNav)return;const wrap=demoNav.getBoundingClientRect(),r=item.getBoundingClientRect();demoNavLiquid.style.transition=animate?'transform .2s cubic-bezier(.18,.8,.25,1),width .16s ease':'none';demoNavLiquid.style.width=r.width+'px';demoNavLiquid.style.transform='translate3d('+(r.left-wrap.left)+'px,0,0)';demoNavItems.forEach((b,j)=>b.classList.toggle('active',j===demoNavIndex));if(liquidLabel)liquidLabel.textContent=demoNavCopy[demoNavIndex][0];if(liquidText)liquidText.textContent=demoNavCopy[demoNavIndex][1];}
+function demoBubble(){/* Drag trail removed intentionally. */}
+function demoMove(x,y){const r=demoNav.getBoundingClientRect(),w=demoNavLiquid.offsetWidth;let left=Math.max(0,Math.min(r.width-w,x-r.left-w/2));demoNavLiquid.style.transition='none';demoNavLiquid.style.transform='translate3d('+left+'px,0,0)';demoBubble(x,y);let nearest=0,dist=Infinity;demoNavItems.forEach((b,i)=>{const q=b.getBoundingClientRect(),d=Math.abs(x-(q.left+q.width/2));if(d<dist){dist=d;nearest=i;}});demoNavIndex=nearest;demoNavItems.forEach((b,j)=>b.classList.toggle('active',j===nearest));if(liquidLabel)liquidLabel.textContent=demoNavCopy[nearest][0];if(liquidText)liquidText.textContent=demoNavCopy[nearest][1];}
+demoNavItems.forEach((b,i)=>b.addEventListener('click',()=>{if(!demoMoved)placeDemoNav(i);}));
+demoNav.addEventListener('pointerdown',e=>{if(e.button!==undefined&&e.button!==0)return;demoDragging=true;demoMoved=false;demoStartX=e.clientX;demoStartY=e.clientY;demoNav.setPointerCapture?.(e.pointerId);demoNav.classList.add('is-dragging');});
+demoNav.addEventListener('pointermove',e=>{if(!demoDragging)return;if(Math.abs(e.clientX-demoStartX)>5&&Math.abs(e.clientX-demoStartX)>Math.abs(e.clientY-demoStartY))demoMoved=true;if(demoMoved)demoMove(e.clientX,e.clientY);});
+function endDemoDrag(e){if(!demoDragging)return;demoDragging=false;demoNav.classList.remove('is-dragging');demoLastTrailX=null;if(demoMoved){let nearest=0,dist=Infinity;demoNavItems.forEach((b,i)=>{const r=b.getBoundingClientRect(),d=Math.abs(e.clientX-(r.left+r.width/2));if(d<dist){dist=d;nearest=i;}});placeDemoNav(nearest,true);setTimeout(()=>demoMoved=false,80);}else{placeDemoNav(demoNavItems.findIndex(b=>b===e.target.closest('[data-demo-nav]'))>=0?demoNavItems.findIndex(b=>b===e.target.closest('[data-demo-nav]')):demoNavIndex,true);}}
+demoNav.addEventListener('pointerup',endDemoDrag);demoNav.addEventListener('pointercancel',endDemoDrag);
+document.getElementById('liquidRipple').addEventListener('click',()=>{liquidOrb.style.animation='none';void liquidOrb.offsetWidth;liquidOrb.animate([{transform:'scale(1)',filter:'brightness(1)'},{transform:'scale(1.17) rotate(9deg)',filter:'brightness(1.3)'},{transform:'scale(1)',filter:'brightness(1)'}],{duration:650,easing:'cubic-bezier(.2,.8,.2,1)'});});
+const palettePreview=document.getElementById('palettePreview'),paletteStatus=document.getElementById('paletteStatus');
+document.querySelectorAll('[data-hex]').forEach(b=>b.addEventListener('click',async()=>{const hex=b.dataset.hex;palettePreview.style.borderColor=hex;palettePreview.style.background='linear-gradient(135deg,'+hex+',#101725)';paletteStatus.textContent='Warna dipilih: '+hex;try{await navigator.clipboard.writeText(hex);paletteStatus.textContent='Tersalin: '+hex;}catch(e){paletteStatus.textContent='Kode warna: '+hex+' (salin manual)';}}));
+document.getElementById('paletteShuffle').addEventListener('click',()=>{const sets=[['#0B1427','#D6B56D','#79D6D0','#F2F4F8'],['#101725','#E9C46A','#2A9D8F','#F4F1DE'],['#18212F','#CDB4DB','#FFC8DD','#F8F9FA'],['#102A43','#F6AE2D','#86BBD8','#F0F4F8']];const colors=sets[Math.floor(Math.random()*sets.length)];document.querySelectorAll('[data-hex]').forEach((b,i)=>{b.dataset.hex=colors[i];b.style.background=colors[i];b.querySelector('span').textContent=colors[i];});palettePreview.style.background='linear-gradient(135deg,'+colors[0]+','+colors[1]+')';paletteStatus.textContent='Palet baru dibuat. Tekan warna untuk salin HEX.';});
+// Small, sandboxed HTML/CSS/JS playground.
+const codeEditor=document.getElementById('codeEditor'),codePreview=document.getElementById('codePreview');
+const starterCode=`<!doctype html>
+<html lang="id"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{font-family:Arial,sans-serif;background:#0b1427;color:#f5f5f5;text-align:center;padding:22px}h1{color:#d6b56d}button{background:#d6b56d;color:#101522;border:0;border-radius:12px;padding:10px 14px;font-weight:bold}
+
+/* ORGANIC WATER GLASS — soft fluid silhouette, no square indicator and no drag trail */
+.nav{
+  border-radius:30px!important;
+  background:linear-gradient(135deg,rgba(235,242,255,.13),rgba(174,190,214,.055) 42%,rgba(255,255,255,.095))!important;
+  border:1px solid rgba(255,255,255,.23)!important;
+  -webkit-backdrop-filter:blur(30px) saturate(165%)!important;
+  backdrop-filter:blur(30px) saturate(165%)!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(255,255,255,.045)!important;
+}
+.liquid{
+  border-radius:43% 57% 52% 48% / 42% 45% 55% 58%!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.30) 0%,rgba(239,246,255,.15) 35%,rgba(183,204,230,.08) 68%,rgba(255,255,255,.19) 100%)!important;
+  border:1px solid rgba(255,255,255,.47)!important;
+  -webkit-backdrop-filter:blur(20px) saturate(175%)!important;
+  backdrop-filter:blur(20px) saturate(175%)!important;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.62),inset 0 -2px 5px rgba(255,255,255,.07),0 3px 12px rgba(0,0,0,.14)!important;
+  transition:left .22s cubic-bezier(.2,.75,.25,1),width .16s ease,border-radius .3s ease!important;
+  animation:waterSurface 5.8s ease-in-out infinite;
+}
+.liquid:before{content:""!important;position:absolute!important;inset:1px!important;border-radius:inherit!important;background:radial-gradient(ellipse at 24% 12%,rgba(255,255,255,.27),transparent 43%),linear-gradient(115deg,transparent 20%,rgba(255,255,255,.09) 48%,transparent 75%)!important;opacity:1!important;pointer-events:none!important;animation:none!important}
+.liquid:after{content:""!important;inset:2px!important;border-radius:inherit!important;background:linear-gradient(160deg,rgba(255,255,255,.11),transparent 45%,rgba(255,255,255,.045))!important;opacity:1!important}
+.nav.is-dragging .liquid{filter:brightness(1.04)!important;animation:none!important;box-shadow:inset 0 1px 1px rgba(255,255,255,.62),0 3px 12px rgba(0,0,0,.13)!important}
+@keyframes waterSurface{0%,100%{border-radius:43% 57% 52% 48% / 42% 45% 55% 58%}50%{border-radius:52% 48% 44% 56% / 49% 57% 43% 51%}}
+.demo-nav-wrap{border-radius:27px!important;background:linear-gradient(135deg,rgba(235,242,255,.12),rgba(174,190,214,.05) 48%,rgba(255,255,255,.08))!important;border:1px solid rgba(255,255,255,.22)!important;-webkit-backdrop-filter:blur(26px) saturate(160%)!important;backdrop-filter:blur(26px) saturate(160%)!important;box-shadow:0 10px 26px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.2)!important}
+.demo-nav-liquid{border-radius:43% 57% 52% 48% / 42% 45% 55% 58%!important;background:linear-gradient(145deg,rgba(255,255,255,.29),rgba(239,246,255,.13) 42%,rgba(183,204,230,.08) 70%,rgba(255,255,255,.17))!important;border:1px solid rgba(255,255,255,.45)!important;-webkit-backdrop-filter:blur(18px) saturate(170%)!important;backdrop-filter:blur(18px) saturate(170%)!important;box-shadow:inset 0 1px rgba(255,255,255,.6),0 3px 10px rgba(0,0,0,.12)!important;animation:waterSurface 5.8s ease-in-out infinite}
+.demo-nav-liquid:after{border-radius:inherit!important;background:radial-gradient(ellipse at 24% 12%,rgba(255,255,255,.22),transparent 44%),linear-gradient(120deg,transparent 20%,rgba(255,255,255,.09) 48%,transparent 76%)!important}
+.water-bubble{display:none!important}
+@media(prefers-reduced-motion:reduce){.liquid,.demo-nav-liquid{animation:none!important}}
+
+</style><h1>Halo, dunia! 👋</h1><p>Ini hasil coding-ku.</p><button onclick="document.querySelector('p').textContent='Berhasil! JavaScript berjalan 🎉'">Klik aku</button></html>`;
+function runCodePreview(){if(!codeEditor.value.trim())codeEditor.value=starterCode;codePreview.srcdoc=codeEditor.value;}
+document.getElementById('runCode').addEventListener('click',runCodePreview);
+document.getElementById('resetCode').addEventListener('click',()=>{codeEditor.value=starterCode;runCodePreview();});
+// Configure your own WhatsApp number here before publishing. Use country code, no + or spaces.
+const whatsappNumber = '62895339110767';
+document.getElementById('whatsappButton').addEventListener('click',()=>{const number=whatsappNumber.replace(/\D/g,'');if(number.length<9||number.length>15){alert('Nomor WhatsApp pemilik belum diatur. Buka file HTML di Acode, cari variabel whatsappNumber, lalu isi nomor dengan kode negara (contoh format: 6281234567890).');return;}window.open('https://wa.me/'+number+'?text='+encodeURIComponent('Halo Ulil! Aku melihat portofolio kamu.'),'_blank','noopener');});
+// Original motivational messages: no song lyrics are reproduced.
+const audio=document.getElementById('loveAudio');
+const musicCard=document.getElementById('musicCard');
+const songFile=document.getElementById('songFile');
+const songStatus=document.getElementById('songStatus');
+const musicPlayBtn=document.getElementById('musicPlayBtn');
+const audioUrl=document.getElementById('audioUrl');
+const loadAudioUrl=document.getElementById('loadAudioUrl');
+const musicSeek=document.getElementById('musicSeek');
+const musicCurrent=document.getElementById('musicCurrent');
+const musicDuration=document.getElementById('musicDuration');
+let activeSongUrl=null;
+function fmtTime(value){if(!Number.isFinite(value)||value<0)return '0:00';const m=Math.floor(value/60),s=Math.floor(value%60);return m+':'+String(s).padStart(2,'0');}
+function setAudioSource(url,label){audio.pause();audio.src=url;audio.load();musicSeek.value=0;musicCurrent.textContent='0:00';musicDuration.textContent='0:00';songStatus.textContent='Memuat audio: '+label+'…';audio.play().then(()=>{songStatus.textContent='Sedang diputar: '+label;}).catch(()=>{songStatus.textContent='Audio siap. Tekan tombol Play untuk mulai.';});}
+if(loadAudioUrl&&audioUrl&&audio){loadAudioUrl.addEventListener('click',()=>{const url=audioUrl.value.trim();if(!url){songStatus.textContent='Tempel dulu URL langsung ke file audio yang bisa diakses publik.';return;}try{const parsed=new URL(url);if(parsed.protocol!=='https:'&&parsed.protocol!=='http:')throw new Error('protocol');setAudioSource(parsed.href,'audio online');}catch(e){songStatus.textContent='URL tidak valid. Gunakan tautan https:// langsung ke file audio.';}});}
+if(songFile&&audio){songFile.addEventListener('change',()=>{const file=songFile.files&&songFile.files[0];if(!file)return;if(!file.type.startsWith('audio/')){songStatus.textContent='File ini bukan audio. Pilih MP3 atau file audio lain.';return;}if(activeSongUrl)URL.revokeObjectURL(activeSongUrl);activeSongUrl=URL.createObjectURL(file);setAudioSource(activeSongUrl,file.name);});}
+if(musicPlayBtn&&audio){musicPlayBtn.addEventListener('click',()=>{if(!audio.src){songStatus.textContent='Hubungkan URL audio online atau pilih file dari HP terlebih dahulu.';return;}if(audio.paused){audio.play().then(()=>{songStatus.textContent='Sedang diputar.';}).catch(()=>{songStatus.textContent='Belum bisa diputar. Periksa URL audio dan koneksi internet.';});}else audio.pause();});audio.addEventListener('play',()=>{musicPlayBtn.textContent='❚❚ Pause';});audio.addEventListener('pause',()=>{musicPlayBtn.textContent='▶ Play';});audio.addEventListener('loadedmetadata',()=>{musicDuration.textContent=fmtTime(audio.duration);});audio.addEventListener('timeupdate',()=>{musicCurrent.textContent=fmtTime(audio.currentTime);if(Number.isFinite(audio.duration)&&audio.duration>0)musicSeek.value=String(audio.currentTime/audio.duration*100);});musicSeek.addEventListener('input',()=>{if(Number.isFinite(audio.duration)&&audio.duration>0)audio.currentTime=(Number(musicSeek.value)/100)*audio.duration;});audio.addEventListener('error',()=>{if(songStatus)songStatus.textContent='Audio gagal dimuat. Pastikan URL adalah tautan langsung ke file audio publik dan host mengizinkan pemutaran dari website.';});}
+const motivation=document.getElementById('motivationText');
+const messages=[
+ 'Seperti lagu yang punya nada, hidup juga punya waktunya sendiri. Nikmati prosesmu.',
+ 'Jatuh cinta pada proses belajar: pelan-pelan, konsisten, dan terus bertumbuh.',
+ 'Kamu tidak harus sempurna hari ini. Cukup berani mencoba satu langkah lagi.',
+ 'Jaga mimpi tetap hidup. Usaha kecil yang diulang bisa membawa perubahan besar.',
+ 'Beri ruang untuk bahagia, belajar dari gagal, lalu mulai lagi dengan hati yang tenang.'
+];
+let lastMessage=-1;
+function showMotivation(index){if(!motivation)return;const next=Math.max(0,Math.min(messages.length-1,index));if(next===lastMessage)return;lastMessage=next;motivation.style.animation='none';void motivation.offsetWidth;motivation.textContent=messages[next];motivation.style.animation='motivationIn .5s ease both';}
+if(audio&&musicCard){audio.addEventListener('play',()=>musicCard.classList.add('is-playing'));audio.addEventListener('pause',()=>musicCard.classList.remove('is-playing'));audio.addEventListener('ended',()=>{musicCard.classList.remove('is-playing');showMotivation(4);});audio.addEventListener('timeupdate',()=>{if(audio.duration&&isFinite(audio.duration)){const index=Math.min(messages.length-1,Math.floor((audio.currentTime/audio.duration)*messages.length));showMotivation(index);}});audio.addEventListener('error',()=>{musicCard.classList.remove('is-playing');});}
+})();
+</script>
+</body>
+</html>
